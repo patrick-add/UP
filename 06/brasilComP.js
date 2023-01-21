@@ -17,5 +17,3 @@ if (palavrasSelecionada.length > 0) {
 } else {
     console.log('NENHUMA')
 }
-
-//console.log(musica.palavras[0])
