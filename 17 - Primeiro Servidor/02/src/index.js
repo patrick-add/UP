@@ -7,7 +7,7 @@ let tempo;
 let cronometro;
 
 app.get('/', (req, res) => {
-    res.send(`Tempo atual do cronômetro: ${minutos.toString().padStart(2, '0')} minutos e ${segundos.toString().padStart(2, '0')} segundos`)
+    return res.send(`Tempo atual do cronômetro: ${minutos.toString().padStart(2, '0')} minutos e ${segundos.toString().padStart(2, '0')} segundos`)
 
 })
 
@@ -24,24 +24,24 @@ app.get('/iniciar', (req, res) => {
     }
     cronometro()
 
-    res.send(`Cronômetro iniciado!`)
+    return res.send(`Cronômetro iniciado!`)
 
 })
 
 app.get('/pausar', (req, res) => {
     clearInterval(tempo)
-    res.send(`Cronômetro pausado!`)
+    return res.send(`Cronômetro pausado!`)
 })
 
 app.get('/continuar', (req, res) => {
     cronometro()
-    res.send(`Cronômetro continuando!`)
+    return res.send(`Cronômetro continuando!`)
 })
 
 app.get('/zerar', (req, res) => {
     minutos = 00
     segundos = 00
-    res.send(`Cronômetro zerado!`)
+    return res.send(`Cronômetro zerado!`)
 })
 
 
